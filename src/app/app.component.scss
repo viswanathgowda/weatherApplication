@@ -1,0 +1,213 @@
+.full {
+    width: 39vw;
+    height: 45vh;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.location-link {
+    color: brown;
+    margin: 10px;
+    background-color: rgb(243, 240, 255);
+    padding: 20px;
+    font-size: 30px;
+}
+
+.weatherdata {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(243, 240, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-size: 20px;
+    float: right;
+    border: 2px solid black;
+    height: 276px;
+}
+
+.heading {
+    font-size: 40px;
+    color: blue;
+    /* background-color: beige;
+    padding: 10px;
+    margin: 4px; */
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.weatherdesc {
+    color: red;
+    padding: 5px;
+}
+
+.temp {
+    color: red;
+    padding: 5px;
+}
+
+.wind {
+    color: red;
+    padding: 5px;
+}
+
+.pressure {
+    color: red;
+    padding: 5px;
+}
+
+.selectedLocation {
+    color: white;
+    padding: 5px;
+    background-color: green;
+    margin: 2px;
+    border-radius: 4px;
+}
+
+.days {
+    background-color: aqua;
+    margin: 10px;
+    padding: 10px;
+    color: brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: 20px;
+}
+
+.weather {
+    margin-top: 20px;
+    margin-left: -4px;
+}
+
+.location {
+    background-color: blue;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+
+}
+
+.deletebutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.weeklystatus {
+    float: right;
+}
+
+
+/* responsive */
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .full {
+        width: 95%;
+        height: 45vh;
+        max-width: 460px;
+        margin: 10px;
+        min-width: 320px;
+    }
+
+    .weather {
+        margin: initial;
+    }
+
+    .p-inputtext {
+        // max-width: 464px;
+        // min-width: 355px;
+        // width: 95%;
+    }
+
+    .form {
+        display: flex;
+
+        .searchBttn {
+            margin: 0 0 0 4px !important;
+            padding: 14px;
+        }
+    }
+
+    .heading {
+        text-align: left;
+        font-size: 28px;
+    }
+
+    .clearAll {
+        background: #3B82F6;
+        border: 1px solid #3B82F6;
+        font-weight: 500;
+        color: white;
+        border-radius: 10px;
+        margin-left: 5px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .location-link {
+        width: 95%;
+        max-width: 460px;
+        min-width: 320px;
+        margin: initial;
+        margin-top: 10px;
+        display: flex;
+        padding: 10px 20px 10px 20px;
+        .p-button.p-button-icon-only {
+            padding: 0.75rem 0 0.75rem 0.15rem !important;
+        }
+    }
+
+    .locationName {
+        padding: 5px 10px 5px 10px !important;
+        margin-left: -12px !important;
+        color: #ffffff;
+        background: #3B82F6;
+        border: 1px solid #3B82F6;
+        font-size: 1rem;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 6px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    .locationWeather{
+        font-size: 20px;
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    }
+    .weatherDeatils{
+        display: flex;
+        flex-direction: column;
+        .weatherdata{
+            margin: 10px -2px 10px -2px;
+        }
+        .days{
+            margin: 10px -2px 10px -2px;
+            
+        }
+        .table{
+            display: flex;
+    flex-direction: column;
+        thead, tbody, tfoot, tr, td, th{
+            border-color: none;
+     border-style: none;
+    border-width: none;
+    }
+        }
+    }
+   
+
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {}

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <h1 class="heading"><b>Weather Forcasting Application</b></h1>
+        <div class="col-6 full" id="map">
+        </div>
+        <div class="col-6 weather">
+            <div class="text-center col-12">
+                <form [formGroup]="locationGroup" class="form">
+                    <span class="p-float-label">
+                        <input pInputText id="in_input" formControlName="location" placeholder="Enter the City Name"
+                            type="text" />
+                        <!-- <label for="in_input">Enter the city name</label> -->
+                    </span>
+                    <button pButton pRipple type="button" icon="pi pi-search"
+                        class="p-button-rounded p-button-primary m-2 searchBttn" type="submit"
+                        (click)="onSubmit(locationGroup.value.location, true, false)">
+                    </button>
+                    <button *ngIf="showData && screenWidth > 480" class="m-1" pButton pRipple label="Clear All" icon="pi pi-trash" type="button"
+                        (click)="clearWeatherData()"></button>
+                    <button *ngIf="showData && screenWidth < 480" class="clearAll"   label="Clear All"  type="button"
+                        (click)="clearWeatherData()">Clear All</button>
+                </form>
+            </div>
+            <div class="location-link col-12" *ngFor="let x of locationsList">
+                <p-button *ngIf="showData && screenWidth > 480" class="locationName" (click)="selectedLocations(x.location, false)">{{
+                    x.location
+                    }}</p-button>
+                <button  class="locationName" (click)="selectedLocations(x.location, false)" *ngIf="showData && screenWidth < 480">{{x.location}}</button>
+                <span class="locationWeather">{{ x.data }}</span>
+                <button class="deletebutton " pButton pRipple type="button" icon="pi pi-times"
+                    class="p-button-rounded p-button-danger p-button-outlined" (click)="onDelete(x.location)"
+                    style="float: right;"></button>
+            </div>
+        </div>
+        <div *ngIf="showData" class="weatherDeatils">
+            <div class="weatherdata">
+                <div class="selectedLocation">{{selectedLocation}} - {{todayDate}}</div>
+                <div class="temp">Temperature: {{ temperature }}C</div>
+                <div class="weatherdesc">weatherDesc: {{ weatherDesc }}</div>
+                <div class="wind">Wind: {{ wind }}</div>
+                <div class="pressure">Pressure: {{ pressure }}</div>
+            </div>
+            <div class="days">
+                <div>
+                    <p-button label="Weekly Status" class="weeklystatus mt-2" (click)="onWeeklyStatus(true)"></p-button>
+                    <h3 style="float: left;" [ngStyle]=" selectedlocationstyle ? active : deactive">
+                        <b>{{selectedLocation2}}</b>
+                    </h3>
+                </div>
+                <!-- <br> -->
+                <table class="table" *ngIf="weatherdata && weatherdata.length>0">
+                    <thead>
+                        <tr>
+                            <th>Dates</th>
+                            <th>Temp</th>
+                            <th>WeatherDescription</th>
+                        </tr>
+                    </thead>
+                    <br>
+                    <tbody *ngFor="let x of weatherdata">
+                        <tr>
+                            <td>{{x.date}}</td>
+                            <td>{{x.temp}}</td>
+                            <td>{{x.weatherdes}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
